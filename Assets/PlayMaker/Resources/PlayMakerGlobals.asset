@@ -183,6 +183,7 @@ MonoBehaviour:
   - LOAD_PLAY_MODE2
   - INIT_ANSWER_PANEL
   - FINISH_GAME
+  - LOAD_IMAGE
 --- !u!1002 &11400001
 EditorExtensionImpl:
   serializedVersion: 6

@@ -141,13 +141,12 @@ public class DbHelper : MonoBehaviour {
         _connection.Close();
         return puzzle;
     }
-
     public Puzzle getNextPuzzle(int oldId)
     {
         Puzzle puzzle = null;
         _connection.Open();
         // if you have a bunch of stuff, this is going to be inefficient and a pain.  it's just for testing/show
-        _command.CommandText = "select id, solution from Puzzle where id > "+ oldId + " and id < 4000 order by id asc limit 4";
+        _command.CommandText = "select id,solution from Puzzle where id > " + oldId + " and id < 4000 order by id asc limit 4";
         _reader = _command.ExecuteReader();
         //Debug.Log(_reader);
         bool first = true;
@@ -169,6 +168,25 @@ public class DbHelper : MonoBehaviour {
         _reader.Close();
         _connection.Close();
         return puzzle;
+    }
+    public string[] getRandomPuzzle(String solution)
+    {
+
+        ArrayList arrayList = new ArrayList();
+        _connection.Open();
+        // if you have a bunch of stuff, this is going to be inefficient and a pain.  it's just for testing/show
+        _command.CommandText = "select  solution from Puzzle where id < 4000 and solution !='"+ solution + "' and length(solution) = length('" + solution + "')  order by RANDOM() limit 3";
+        _reader = _command.ExecuteReader();
+        System.Random ran = new System.Random();
+        int ranIndex = ran.Next(0, 3);
+        while (_reader.Read())
+        {
+            arrayList.Add(_reader.GetString(0));
+        }
+        arrayList.Insert(ranIndex, solution);
+        _reader.Close();
+        _connection.Close();
+        return (string[])arrayList.ToArray(typeof(string));
     }
 
     public static DbHelper getInstance()

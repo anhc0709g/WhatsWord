@@ -90,7 +90,7 @@ namespace HutongGames.PlayMaker.Actions
    
             // i have fuck to do this because in loop array set fsm variable action intType does not work.
             // fuckkkk!
-            if (setValue.Type == VariableType.Int)
+            if (setValue.Type == VariableType.Int|| setValue.Type == VariableType.String)
             {
                 targetVariable.RawValue = setValue.NamedVar.RawValue;
                 return;

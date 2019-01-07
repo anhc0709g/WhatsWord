@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 39841644362ed2440baed02f8765eaa3
+timeCreated: 1544790458
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Journal
+  fontNames:
+  - Journal
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 643928062433a6c48845d26f55eb956a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

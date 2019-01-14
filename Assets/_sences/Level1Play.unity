@@ -2854,6 +2854,36 @@ Prefab:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114826935850728704, guid: 4f53e5337b2d44a4cad033782c9956ae,
+        type: 2}
+      propertyPath: fsm.states.Array.data[3].actionData.actionIsOpen.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826935850728704, guid: 4f53e5337b2d44a4cad033782c9956ae,
+        type: 2}
+      propertyPath: fsm.states.Array.data[3].actionData.actionIsOpen.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826935850728704, guid: 4f53e5337b2d44a4cad033782c9956ae,
+        type: 2}
+      propertyPath: fsm.states.Array.data[3].actionData.actionIsOpen.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826935850728704, guid: 4f53e5337b2d44a4cad033782c9956ae,
+        type: 2}
+      propertyPath: fsm.states.Array.data[3].actionData.actionEnabled.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826935850728704, guid: 4f53e5337b2d44a4cad033782c9956ae,
+        type: 2}
+      propertyPath: fsm.states.Array.data[3].actionData.actionIsOpen.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826935850728704, guid: 4f53e5337b2d44a4cad033782c9956ae,
+        type: 2}
+      propertyPath: fsm.states.Array.data[3].actionData.actionEnabled.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f53e5337b2d44a4cad033782c9956ae, type: 2}
   m_IsPrefabParent: 0
@@ -5398,6 +5428,12 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114519274038673830, guid: 4f53e5337b2d44a4cad033782c9956ae,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f70bb1d0daf5b3c4c8ca3063702e5e2c,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f53e5337b2d44a4cad033782c9956ae, type: 2}
   m_IsPrefabParent: 0
@@ -11150,7 +11186,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101010100
-        actionIsOpen: 000000000101
+        actionIsOpen: 000000000001
         actionStartIndex: 000000000500000009000000100000001300000015000000
         actionHashCodes: bf83c900ea32a105afff1105f90ba701978a9b039c59e501
         unityObjectParams: []
@@ -11466,7 +11502,7 @@ MonoBehaviour:
         y: 279.96094
         width: 144
         height: 32
-      isBreakpoint: 0
+      isBreakpoint: 1
       isSequence: 0
       hideUnused: 0
       transitions:
@@ -11664,7 +11700,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: {r: 0.13786763, g: 0.625, b: 0.1613844, a: 1}
+          value: {r: 0.013624562, g: 0.30882353, b: 0.0156604, a: 1}
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []

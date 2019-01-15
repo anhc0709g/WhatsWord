@@ -184,6 +184,7 @@ MonoBehaviour:
   - INIT_ANSWER_PANEL
   - FINISH_GAME
   - LOAD_IMAGE
+  - SET_TEXT
 --- !u!1002 &11400001
 EditorExtensionImpl:
   serializedVersion: 6

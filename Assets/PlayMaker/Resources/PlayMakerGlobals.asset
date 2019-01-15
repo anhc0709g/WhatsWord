@@ -185,6 +185,9 @@ MonoBehaviour:
   - FINISH_GAME
   - LOAD_IMAGE
   - SET_TEXT
+  - button press
+  - Active
+  - DeActive
 --- !u!1002 &11400001
 EditorExtensionImpl:
   serializedVersion: 6

@@ -15,11 +15,29 @@ MonoBehaviour:
     floatVariables: []
     intVariables:
     - useVariable: 1
+      name: CoinsReviewWord
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 20
+    - useVariable: 1
       name: coin
       tooltip: 
       showInInspector: 0
       networkSync: 0
       value: 0
+    - useVariable: 1
+      name: coinsReviewLetter
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 5
+    - useVariable: 1
+      name: coins_add
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 10
     - useVariable: 1
       name: currentMode
       tooltip: 
@@ -158,7 +176,7 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   events:
   - Cancel
   - closeDoor

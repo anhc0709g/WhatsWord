@@ -146,13 +146,14 @@ public class DbHelper : MonoBehaviour {
         Puzzle puzzle = null;
         _connection.Open();
         // if you have a bunch of stuff, this is going to be inefficient and a pain.  it's just for testing/show
-        _command.CommandText = "select id,solution from Puzzle where id > " + oldId + " and id < 4000 order by id asc limit 4";
+        _command.CommandText = "select id,solution,questions from Puzzle where id > " + oldId + " and id < 4000 order by id asc limit 4";
         _reader = _command.ExecuteReader();
         //Debug.Log(_reader);
         bool first = true;
         int i = 0;
         puzzle = new Puzzle();
         puzzle.randomSolution = new string[4];
+        
         while (_reader.Read())
         {
 
@@ -160,6 +161,7 @@ public class DbHelper : MonoBehaviour {
             {
                 puzzle.id = _reader.GetInt16(0);
                 puzzle.solution = _reader.GetString(1);
+                puzzle.questions = _reader.GetString(2);
                 first = false;
             }
             puzzle.randomSolution[i] = _reader.GetString(1);

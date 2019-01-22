@@ -85,12 +85,12 @@ namespace HutongGames.PlayMaker.Actions
             string randomSolution = puzzle.solution;
           
             int randomCharsLength = 12 - puzzle.solution.Length;
-            string randomSolutionChar = puzzle.solution + GenerateRandomString(randomCharsLength);
-
+            //string randomSolutionChar = puzzle.solution + GenerateRandomString(randomCharsLength);
+            string randomSolutionChar = puzzle.questions;
             string[] randomaray = StringToCharArray(randomSolutionChar);
             solutionArray.Values= StringToCharArray(puzzle.solution);
             RandomSolutionArray.Values= randomaray;
-            reshuffle(randomaray);
+            //reshuffle(randomaray);
           //  Debug.Log("RandomSolutionArray.Values="+ RandomSolutionArray.Values.Length);
         }
         void reshuffle(string[] texts)

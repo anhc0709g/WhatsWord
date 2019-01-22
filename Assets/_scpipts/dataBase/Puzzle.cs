@@ -6,5 +6,6 @@ public class Puzzle : Object  {
 
     public int id;
     public string solution;
+    public string questions;
     public string[] randomSolution;
 }

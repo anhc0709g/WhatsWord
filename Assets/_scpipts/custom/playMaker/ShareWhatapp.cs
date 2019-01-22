@@ -20,7 +20,7 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override void OnEnter()
 		{
-            Application.OpenURL("whatsapp://send?text=https://whatsword.giyf.vn/index.php?word=" + puzzleId.Value);
+            Application.OpenURL("whatsapp://send?text=https://whatsword.gameaz.net/index.php?word=" + puzzleId.Value);
 			Finish();
 		}
 

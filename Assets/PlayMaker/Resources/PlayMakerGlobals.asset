@@ -206,6 +206,7 @@ MonoBehaviour:
   - button press
   - Active
   - DeActive
+  - cancel
 --- !u!1002 &11400001
 EditorExtensionImpl:
   serializedVersion: 6

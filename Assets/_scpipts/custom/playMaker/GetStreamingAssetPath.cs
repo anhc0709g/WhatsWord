@@ -23,9 +23,15 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override void OnEnter()
 		{
-            streamingAssetPath.Value = Application.streamingAssetsPath;
 
-			Finish();
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX || UNITY_IOS)
+
+            streamingAssetPath.Value = "file://" + Application.streamingAssetsPath;
+#elif UNITY_ANDROID || UNITY_EDITOR_WIN
+
+            streamingAssetPath.Value = Application.streamingAssetsPath;
+#endif
+            Finish();
 		}
 
 

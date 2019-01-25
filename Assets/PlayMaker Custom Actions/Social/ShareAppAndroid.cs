@@ -37,15 +37,15 @@ namespace HutongGames.PlayMaker.Actions
 
 				Finish();
 		}
-		
 
-		
-		void DoShare()
-		{
 
-			if (message.Value == null) return;
 
-			#if UNITY_ANDROID && !UNITY_EDITOR
+        void DoShare()
+        {
+
+            if (message.Value == null) return;
+
+#if UNITY_ANDROID && !UNITY_EDITOR
 			AndroidJavaClass intentClass = new AndroidJavaClass ("android.content.Intent");
 			AndroidJavaObject intentObject = new AndroidJavaObject ("android.content.Intent");
 			intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
@@ -64,10 +64,11 @@ namespace HutongGames.PlayMaker.Actions
 			else {
 			currentActivity.Call ("startActivity", intentObject);
 			}
+#elif UNITY_IOS
+            NativeShare.Share(title.Value, "", message.Value, "", "text/uri-list", false, "Select sharing app");
+#endif
+        }
 
-			#endif
-		}
-		
-	}
+    }
 }
 

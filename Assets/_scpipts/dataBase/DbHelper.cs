@@ -31,8 +31,17 @@ public class DbHelper : MonoBehaviour {
     private void CopyFileIfNonexistent()
     {
 
+
+        string assetPath = "";
+
+#if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX || UNITY_IOS)
         DATABASE_PATH = Application.persistentDataPath + "/" + SQL_DB_NAME;
-        string assetPath = Application.streamingAssetsPath + "/" + SQL_DB_NAME;
+        assetPath = "file://" + Application.streamingAssetsPath + "/" + SQL_DB_NAME;
+#elif UNITY_ANDROID || UNITY_EDITOR_WIN
+        DATABASE_PATH = Application.persistentDataPath + "/" + SQL_DB_NAME;
+        assetPath = Application.streamingAssetsPath + "/" + SQL_DB_NAME;
+#endif
+
 
         if (!File.Exists(DATABASE_PATH))
         {

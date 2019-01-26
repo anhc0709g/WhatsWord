@@ -1347,8 +1347,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 63
-        y: 209
+        x: 59
+        y: 257
         width: 100
         height: 32
       isBreakpoint: 0
@@ -1455,8 +1455,8 @@ MonoBehaviour:
         serializedVersion: 2
         x: 284
         y: 169
-        width: 100
-        height: 32
+        width: 111
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -1469,8 +1469,19 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: nomoreItem
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: NORMAL
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.ArraySort
+        - HutongGames.PlayMaker.Actions.ArrayGet
+        - HutongGames.PlayMaker.Actions.ArrayGet
         - HutongGames.PlayMaker.Actions.GetPosition
         - HutongGames.PlayMaker.Actions.GetPosition
         - HutongGames.PlayMaker.Actions.Vector3Lerp
@@ -1486,25 +1497,28 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101010100
-        actionIsOpen: 00010101010001
-        actionStartIndex: 00000000070000000e000000130000001b0000001f00000026000000
-        actionHashCodes: 5552ad055552ad0506095f04f6e5be0336f094001bcdca049c59e501
+        - 
+        - 
+        - 
+        actionEnabled: 01010101010101010100
+        actionIsOpen: 00010100000000010101
+        actionStartIndex: 0000000001000000060000000b00000012000000190000001e000000260000002a00000031000000
+        actionHashCodes: d7d679006ba593016ba593015552ad055552ad0506095f04f6e5be0336f094001bcdca049c59e501
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
-          name: PanelAnswer
+          name: prefabObj
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
         - ownerOption: 1
           gameObject:
             useVariable: 1
-            name: PanelAnswer
+            name: prefabObj
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: {fileID: 0}
         - ownerOption: 1
@@ -1545,8 +1559,95 @@ MonoBehaviour:
           networkSync: 0
           value: 
         fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
+        fsmVarParams:
+        - variableName: index
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: prefabObj
+          objectType: UnityEngine.GameObject
+          useVariable: 1
+          type: 3
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: emptyCharArray
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        - useVariable: 1
+          name: emptyCharArray
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        - useVariable: 1
+          name: answerCharPrefabArray
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 3
+          objectTypeName: UnityEngine.GameObject
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 1
@@ -1633,7 +1734,19 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 20
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: index
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params:
@@ -1677,16 +1790,29 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - nomoreItem
+        - nomoreItem
         - FINISHED
         - 
         - 
-        byteData: 000000000000000000000100000000010001010000000001
+        byteData: 0000000000000000000000000100000000010001010000000001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001c0000000f0000000f0000000f0000000700000001000000140000001c0000000f0000000f0000000f00000007000000010000001c0000001c0000000f0000001c00000001000000140000001c0000000f0000000f0000000f00000007000000010000000100000014000000130000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000070000001200000001000000
+        paramDataType: 2900000029000000100000002700000001000000170000002900000010000000270000000100000017000000140000001c0000000f0000000f0000000f0000000700000001000000140000001c0000000f0000000f0000000f00000007000000010000001c0000001c0000000f0000001c00000001000000140000001c0000000f0000000f0000000f00000007000000010000000100000014000000130000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000070000001200000001000000
         paramName:
+        - array
+        - array
+        - index
+        - storeValue
+        - everyFrame
+        - indexOutOfRange
+        - array
+        - index
+        - storeValue
+        - everyFrame
+        - indexOutOfRange
         - gameObject
         - vector
         - x
@@ -1728,8 +1854,8 @@ MonoBehaviour:
         - logLevel
         - text
         - sendToUnityLog
-        paramDataPos: 0000000000000000000000000100000002000000000000000400000001000000010000000300000004000000050000000500000009000000020000000300000006000000040000000a00000002000000050000000700000008000000090000000b0000000f0000001000000003000000000000000a000000110000000b0000000c0000000d00000000000000010000000200000012000000130000000000000017000000
-        paramByteDataSize: 0000000000000000000000000000000000000000040000000100000000000000000000000000000000000000000000000400000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000400000001000000010000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000040000000000000001000000
+        paramDataPos: 0000000001000000000000000000000000000000000000000200000001000000010000000100000001000000000000000000000000000000010000000200000002000000060000000100000001000000030000000400000005000000070000000b000000020000000300000006000000040000000c00000002000000050000000700000008000000090000000d000000110000001200000003000000000000000a000000130000000b0000000c0000000d00000002000000030000000400000014000000150000000000000019000000
+        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000040000000100000000000000000000000000000000000000000000000400000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000400000001000000010000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000040000000000000001000000
     - name: State 2
       description: 
       colorIndex: 0
@@ -2624,6 +2750,9 @@ MonoBehaviour:
     - name: SET_TEXT
       isSystemEvent: 0
       isGlobal: 1
+    - name: nomoreItem
+      isSystemEvent: 0
+      isGlobal: 0
     globalTransitions:
     - fsmEvent:
         name: BACK
@@ -2649,7 +2778,13 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: 0
-      intVariables: []
+      intVariables:
+      - useVariable: 1
+        name: index
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       boolVariables: []
       stringVariables:
       - useVariable: 1
@@ -2719,6 +2854,12 @@ MonoBehaviour:
         networkSync: 0
         value: {fileID: 0}
       - useVariable: 1
+        name: prefabObj
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
         name: textObj
         tooltip: 
         showInInspector: 0
@@ -2738,7 +2879,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0

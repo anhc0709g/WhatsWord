@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "326096806777",
+    "firebase_url": "https://what-s-word.firebaseio.com",
+    "project_id": "what-s-word",
+    "storage_bucket": "what-s-word.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326096806777:android:d54a3c287659c9ea",
+        "android_client_info": {
+          "package_name": "net.gameaz.whatsword"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326096806777-3rbgkotu4b6fpjc43mld7huj43vmf64b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE58DYjSJw6AIZrUH6LpUr-nI-HinAAYg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

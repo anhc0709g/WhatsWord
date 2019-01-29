@@ -88,7 +88,14 @@ MonoBehaviour:
     rectVariables: []
     quaternionVariables: []
     gameObjectVariables: []
-    objectVariables: []
+    objectVariables:
+    - useVariable: 1
+      name: fireBaseUserHelper
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      typeName: FireBaseUserHelper
+      value: {fileID: 0}
     materialVariables: []
     textureVariables: []
     arrayVariables:
@@ -176,7 +183,7 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   events:
   - Cancel
   - closeDoor

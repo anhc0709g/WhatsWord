@@ -25,8 +25,8 @@ public class FireBaseTest : MonoBehaviour {
     }
 	void gotCurrentUser(UserInfo user)
     {
-        txtUuid.text = user.userid;
-        txtMsg.text = user.shareCode;
+        txtUuid.text = user.uid;
+        txtMsg.text = user.share_code;
         this.userInfo = user;
     }
 	// Update is called once per frame
@@ -48,9 +48,9 @@ public class FireBaseTest : MonoBehaviour {
     }
     public void onLogedIn(UserInfo userInfo)
     {
-        Debug.Log("Logged in "+ userInfo.userid);
+        Debug.Log("Logged in "+ userInfo.uid);
         this.userInfo = userInfo;
-        txtMsg.text = userInfo.userid;
+        txtMsg.text = userInfo.uid;
     
     }
     public void LoginAnonymous_1()
@@ -76,7 +76,7 @@ public class FireBaseTest : MonoBehaviour {
     {
      
 
-        userInfo.shareCode = userInfo.shareCode + "-"+Random.Range(0, 10);
+        userInfo.share_code = userInfo.share_code + "-"+Random.Range(0, 10);
         FirebaseHelper.getInstance().CreateNewUser(userInfo);
     }
     // Track state changes of the auth object.

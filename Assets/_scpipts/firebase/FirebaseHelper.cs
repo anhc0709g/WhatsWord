@@ -177,7 +177,7 @@ public class FirebaseHelper
 
                 _instance.GetCurrentUserInfo(userInfo =>
                 {
-                    if (userInfo != null && userInfo.userid != "")
+                    if (userInfo != null && userInfo.uid != "")
                     {
                         callbackWhenDone(userInfo);
 
@@ -185,8 +185,8 @@ public class FirebaseHelper
                     else
                     {
                         UserInfo user = new UserInfo();
-                        user.userid = firebaseUser.UserId;
-                        user.shareCode = "123";
+                        user.uid = firebaseUser.UserId;
+                        user.share_code = "123";
                         _instance.CreateNewUser(user);
 
                         callbackWhenDone(user); //in callback function, inititate the first profile
@@ -200,7 +200,7 @@ public class FirebaseHelper
 
             _instance.GetCurrentUserInfo(userInfo =>
             {
-                if (userInfo != null && userInfo.userid != "")
+                if (userInfo != null && userInfo.uid != "")
                 {
                     callbackWhenDone(userInfo);
 
@@ -208,8 +208,8 @@ public class FirebaseHelper
                 else
                 {
                     UserInfo user = new UserInfo();
-                    user.userid = firebaseUser.UserId;
-                    user.shareCode = "123";
+                    user.uid = firebaseUser.UserId;
+                    user.share_code = "123";
                     _instance.CreateNewUser(user);
 
                     callbackWhenDone(user);
@@ -323,26 +323,26 @@ public class FirebaseHelper
     //create new user
     public void CreateNewUser(UserInfo user)
     {
-        Debug.Log(string.Format("CreateNewUser :: {0}", user.userid));
+        Debug.Log(string.Format("CreateNewUser :: {0}", user.uid));
 
         string jsonstring = JsonUtility.ToJson(user);
  
 
         FirebaseDatabase.DefaultInstance
             .GetReference(USERS)
-            .Child(user.userid).SetRawJsonValueAsync(jsonstring);
+            .Child(user.uid).SetRawJsonValueAsync(jsonstring);
     }
     //create new user
     public void UpdateUser(UserInfo user)
     {
-        Debug.Log(string.Format("UpdateUser :: {0}", user.userid));
+        Debug.Log(string.Format("UpdateUser :: {0}", user.uid));
 
         string jsonstring = JsonUtility.ToJson(user);
 
 
         FirebaseDatabase.DefaultInstance
             .GetReference(USERS)
-            .Child(user.userid).SetRawJsonValueAsync(jsonstring);
+            .Child(user.uid).SetRawJsonValueAsync(jsonstring);
     }
 
 
@@ -387,9 +387,9 @@ public class FirebaseHelper
                             {
                                 Debug.Log("snapshot :: user :: OK");
 
-                                if (user.userid.Length > 0)
+                                if (user.uid!=null && user.uid.Length > 0)
                                 {
-                                    Debug.Log("snapshot :: userid :: OK :: " + user.userid);
+                                    Debug.Log("snapshot :: userid :: OK :: " + user.uid);
 
                                 }
                                 else

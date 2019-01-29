@@ -5,8 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class UserInfo  {
 
-    public string userid;
-    public string shareCode;
+    public string uid;
+    public string full_name;
+    public string share_code;
     public int curent_mode=1;//CURRENT_MODE
     public int puzzle_no;//PUZZLE_NO
     public int coin;//COIN

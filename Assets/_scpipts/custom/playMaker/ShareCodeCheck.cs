@@ -27,6 +27,7 @@ namespace HutongGames.PlayMaker.Actions
 
         public void initFirebaseDone()
         {
+            shareCode.Value = shareCode.Value.ToUpper();
             Debug.Log("ShareCodeCheck start check shareCode=" + shareCode);
             if(shareCode.Value.Equals(fireBaseUserHelper.currentUserInfo.share_code))
             {

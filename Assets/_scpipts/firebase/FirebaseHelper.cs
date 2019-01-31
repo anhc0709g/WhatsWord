@@ -325,7 +325,7 @@ public class FirebaseHelper
         {
             Debug.Log("SHARE_CODE :: task :: IsCompleted");
             DataSnapshot snapshot = task.Result;
-            Debug.Log("SHARE_CODE :: SHARE_CODE ::  " + snapshot.GetRawJsonValue());
+           // Debug.Log("SHARE_CODE :: SHARE_CODE ::  " + snapshot.GetRawJsonValue());
 
             if (snapshot == null || snapshot.Exists == false)
             {

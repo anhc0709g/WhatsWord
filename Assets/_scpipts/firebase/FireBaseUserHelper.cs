@@ -65,7 +65,6 @@ public class FireBaseUserHelper : MonoBehaviour {
         {
             Debug.Log("CheckIsAdded :: task :: IsCompleted");
             DataSnapshot snapshot = task.Result;
-            Debug.Log("CheckIsAdded :: snapshot ::  " + snapshot.GetRawJsonValue());
 
             if (snapshot == null || snapshot.Exists == false)
             {
@@ -122,10 +121,11 @@ public class FireBaseUserHelper : MonoBehaviour {
         {
             Debug.Log("GetUserByShareCode :: task :: IsCompleted");
             DataSnapshot snapshot = task.Result;
-            Debug.Log("GetUserByShareCode :: snapshot ::  " + snapshot.GetRawJsonValue());
+            
 
             if (snapshot != null && snapshot.Exists == true)
             {
+                Debug.Log("GetUserByShareCode :: snapshot ::  " + snapshot.GetRawJsonValue());
                 string uid = (string)snapshot.Value;
                 Debug.Log("GetUserByShareCode :: task :: userJson="+ uid);
                 GetUserByUid(uid, callbackWhenDone);

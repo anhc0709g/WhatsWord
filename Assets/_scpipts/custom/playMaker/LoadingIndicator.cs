@@ -19,7 +19,7 @@ namespace HutongGames.PlayMaker.Actions
 		public override void OnEnter()
 		{
             #if UNITY_IPHONE
-                    Handheld.SetActivityIndicatorStyle(iOS.ActivityIndicatorStyle.Gray);
+                    Handheld.SetActivityIndicatorStyle(UnityEngine.iOS.ActivityIndicatorStyle.Gray);
             #elif UNITY_ANDROID
                         Handheld.SetActivityIndicatorStyle(AndroidActivityIndicatorStyle.Small);
             #endif

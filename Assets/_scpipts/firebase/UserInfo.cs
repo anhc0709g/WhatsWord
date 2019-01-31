@@ -13,5 +13,6 @@ public class UserInfo  {
     public int coin;//COIN
     public int old_puzzle_id;//OLD_PUZZLE_ID
     public string hint_char_indexs="";//HINT_CHAR_INDEXS
-
+    public bool entered_code = false; 
+    public List<string> success_shared_queue=new List<string>();
 }

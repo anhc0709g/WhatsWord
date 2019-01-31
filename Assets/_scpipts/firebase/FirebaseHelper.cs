@@ -12,7 +12,8 @@ using System.Threading.Tasks;
 public class FirebaseHelper
 {
 
-    private const string USERS = "users";
+    public const string USERS = "users";
+    public const string SHARE_CODE = "share_code";
     private static FirebaseHelper _instance = null;
     private static Firebase.Auth.FirebaseAuth auth = null;
     private static Firebase.Auth.FirebaseUser firebaseUser = null;
@@ -153,46 +154,52 @@ public class FirebaseHelper
         Debug.Log("UNITY_EDITOR");
         if (signedIn == false)
         {   //only allow to login if it is not logged in
-            auth.SignInWithEmailAndPasswordAsync("editor@itpro.vn","123456").ContinueWith(task =>
-            {
-                if (task.IsCanceled)
-                {
-                    Debug.LogError("SignInAnonymouslyAsync was canceled.");
-                    callbackWhenDone(null);
-                    return;
-                }
-                if (task.IsFaulted)
-                {
-                    Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
-                    callbackWhenDone(null);
-                    return;
-                }
+            auth.SignInWithEmailAndPasswordAsync("editor@itpro.vn", "123456").ContinueWith(task =>
+             {
+                 if (task.IsCanceled)
+                 {
+                     Debug.LogError("SignInAnonymouslyAsync was canceled.");
+                     callbackWhenDone(null);
+                     return;
+                 }
+                 if (task.IsFaulted)
+                 {
+                     Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
+                     callbackWhenDone(null);
+                     return;
+                 }
 
-                firebaseUser = task.Result;
-                Debug.LogFormat("User signed in successfully: {0} ({1})",
-                    firebaseUser.DisplayName, firebaseUser.UserId);
+                 firebaseUser = task.Result;
+                 Debug.LogFormat("User signed in successfully: {0} ({1})",
+                     firebaseUser.DisplayName, firebaseUser.UserId);
 
-                Debug.Log("DisplayName :: " + firebaseUser.DisplayName);
-                Debug.Log("UserId :: " + firebaseUser.UserId);
+                 Debug.Log("DisplayName :: " + firebaseUser.DisplayName);
+                 Debug.Log("UserId :: " + firebaseUser.UserId);
 
-                _instance.GetCurrentUserInfo(userInfo =>
-                {
-                    if (userInfo != null && userInfo.uid != "")
-                    {
-                        callbackWhenDone(userInfo);
+                 _instance.GetCurrentUserInfo(userInfo =>
+                 {
+                     if (userInfo != null && userInfo.uid != "")
+                     {
+                         callbackWhenDone(userInfo);
 
-                    }
-                    else
-                    {
-                        UserInfo user = new UserInfo();
-                        user.uid = firebaseUser.UserId;
-                        user.share_code = "123";
-                        _instance.CreateNewUser(user);
+                     }
+                     else
+                     {
+                        
 
-                        callbackWhenDone(user); //in callback function, inititate the first profile
-                    }
-                });
-            });
+                         createShareCode( sharecode => {
+                             UserInfo user = new UserInfo();
+                             user.uid = firebaseUser.UserId;
+                             user.share_code = sharecode;
+                             _instance.CreateNewUser(user);
+                             createFirebaseShareCode(user);
+                             callbackWhenDone(user); //in callback function, inititate the first profile
+                         });
+
+                        
+                     }
+                 });
+             });
         }
         else
         {
@@ -207,12 +214,14 @@ public class FirebaseHelper
                 }
                 else
                 {
-                    UserInfo user = new UserInfo();
-                    user.uid = firebaseUser.UserId;
-                    user.share_code = "123";
-                    _instance.CreateNewUser(user);
-
-                    callbackWhenDone(user);
+                    createShareCode(sharecode => {
+                        UserInfo user = new UserInfo();
+                        user.uid = firebaseUser.UserId;
+                        user.share_code = sharecode;
+                        _instance.CreateNewUser(user);
+                        createFirebaseShareCode(user);
+                        callbackWhenDone(user); //in callback function, inititate the first profile
+                    });
                 }
             });
 
@@ -252,12 +261,14 @@ public class FirebaseHelper
                     }
                     else
                     {
-                        UserInfo user = new UserInfo();
-                        user.uid = firebaseUser.UserId;
-                        user.share_code = "123";
-                        _instance.CreateNewUser(user);
-
-                        callbackWhenDone(user); //in callback function, inititate the first profile
+                       createShareCode( sharecode => {
+                             UserInfo user = new UserInfo();
+                             user.uid = firebaseUser.UserId;
+                             user.share_code = sharecode;
+                             _instance.CreateNewUser(user);
+                             createFirebaseShareCode(user);
+                             callbackWhenDone(user); //in callback function, inititate the first profile
+                         });
                     }
                 });
             });
@@ -275,12 +286,14 @@ public class FirebaseHelper
                 }
                 else
                 {
-                    UserInfo user = new UserInfo();
-                    user.uid = firebaseUser.UserId;
-                    user.share_code = "123";
-                    _instance.CreateNewUser(user);
-
-                    callbackWhenDone(user);
+                    createShareCode( sharecode => {
+                             UserInfo user = new UserInfo();
+                             user.uid = firebaseUser.UserId;
+                             user.share_code = sharecode;
+                             _instance.CreateNewUser(user);
+                             createFirebaseShareCode(user);
+                             callbackWhenDone(user); //in callback function, inititate the first profile
+                         });
                 }
             });
 
@@ -289,6 +302,53 @@ public class FirebaseHelper
 #endif
     }
 
+    public void createFirebaseShareCode(UserInfo userInfo)
+    {
+
+        Dictionary<string, object> userDict = new Dictionary<string, object>();
+
+        userDict.Add("create_time", ServerValue.Timestamp);
+        userDict.Add("uid", userInfo.uid);
+
+        FirebaseDatabase.DefaultInstance
+            .GetReference(SHARE_CODE)
+            .Child(userInfo.share_code).SetValueAsync(userDict);
+    }
+
+    public void createShareCode(System.Action<String> callbackWhenDone)
+    {
+        String randomString = GenerateRandomString(6);
+        DatabaseReference child = FirebaseDatabase.DefaultInstance
+             .GetReference(FirebaseHelper.SHARE_CODE).Child(randomString);
+        child.KeepSynced(true);
+        child.GetValueAsync().ContinueWith(task =>
+        {
+            Debug.Log("SHARE_CODE :: task :: IsCompleted");
+            DataSnapshot snapshot = task.Result;
+            Debug.Log("SHARE_CODE :: SHARE_CODE ::  " + snapshot.GetRawJsonValue());
+
+            if (snapshot == null || snapshot.Exists == false)
+            {
+                callbackWhenDone(randomString);
+            }
+            else
+            {
+                createShareCode(callbackWhenDone);
+            }
+        });
+     }
+    public static string GenerateRandomString(int length)
+    {
+        System.Random random = new System.Random();
+        string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //string characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        System.Text.StringBuilder result = new System.Text.StringBuilder(length);
+        for (int i = 0; i < length; i++)
+        {
+            result.Append(characters[random.Next(characters.Length)]);
+        }
+        return result.ToString();
+    }
     //return current uid
     public string CheckCurrentAuth()
     {
@@ -326,7 +386,7 @@ public class FirebaseHelper
         Debug.Log(string.Format("CreateNewUser :: {0}", user.uid));
 
         string jsonstring = JsonUtility.ToJson(user);
- 
+
 
         FirebaseDatabase.DefaultInstance
             .GetReference(USERS)
@@ -352,9 +412,9 @@ public class FirebaseHelper
         {
             Debug.Log("GetCurrentUserInfo :: signedIn == true :: " + firebaseUser.UserId);
 
-             DatabaseReference child= FirebaseDatabase.DefaultInstance
-                .GetReference(USERS)
-                .Child(firebaseUser.UserId);
+            DatabaseReference child = FirebaseDatabase.DefaultInstance
+               .GetReference(USERS)
+               .Child(firebaseUser.UserId);
             child.KeepSynced(true);
             child.GetValueAsync().ContinueWith(task =>
                 {
@@ -371,7 +431,7 @@ public class FirebaseHelper
                         DataSnapshot snapshot = task.Result;
                         Debug.Log("getCurrentUserInfo :: snapshot :: OK");
 
-                        if (snapshot != null && 
+                        if (snapshot != null &&
                             snapshot.Exists == true)
                         {
                             Debug.Log("getCurrentUserInfo :: snapshot Exist");
@@ -387,7 +447,7 @@ public class FirebaseHelper
                             {
                                 Debug.Log("snapshot :: user :: OK");
 
-                                if (user.uid!=null && user.uid.Length > 0)
+                                if (user.uid != null && user.uid.Length > 0)
                                 {
                                     Debug.Log("snapshot :: userid :: OK :: " + user.uid);
 
@@ -420,7 +480,6 @@ public class FirebaseHelper
             callbackWhenDone(null);
         }
     }
-
 
 }
 #endif

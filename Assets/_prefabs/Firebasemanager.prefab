@@ -117,7 +117,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101010101010100
-        actionIsOpen: 0101000000000001
+        actionIsOpen: 0100000000000001
         actionStartIndex: 00000000040000000e0000001100000014000000170000001a0000001d000000
         actionHashCodes: 1898da00e2703a044b932c014b932c014b932c014b932c011012c100603dd905
         unityObjectParams: []
@@ -434,7 +434,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101010101000000
-        actionIsOpen: 0000000101000001
+        actionIsOpen: 0100000000000001
         actionStartIndex: 00000000020000000600000010000000160000001c0000002200000028000000
         actionHashCodes: 3ae786021898da00e2703a0409faa10209faa10209faa10209faa1020c0e5502
         unityObjectParams: []
@@ -676,7 +676,7 @@ MonoBehaviour:
         y: 229.14062
         width: 234
         height: 32
-      isBreakpoint: 1
+      isBreakpoint: 0
       isSequence: 1
       hideUnused: 0
       transitions:
@@ -706,7 +706,7 @@ MonoBehaviour:
         - Call Method
         - 
         actionEnabled: 01010101010101
-        actionIsOpen: 00000000000101
+        actionIsOpen: 00000000000001
         actionStartIndex: 00000000020000000400000006000000080000000a00000010000000
         actionHashCodes: 5ac852045ac852045ac852045ac852045ac85204ca51e90000000000
         unityObjectParams: []
@@ -726,7 +726,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.coin
+          PropertyName: currentUserInfo.coin
           BoolParameter:
             useVariable: 0
             name: 
@@ -832,7 +832,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -841,7 +841,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -858,7 +858,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.curent_mode
+          PropertyName: currentUserInfo.curent_mode
           BoolParameter:
             useVariable: 0
             name: 
@@ -964,7 +964,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -973,7 +973,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -990,7 +990,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.old_puzzle_id
+          PropertyName: currentUserInfo.old_puzzle_id
           BoolParameter:
             useVariable: 0
             name: 
@@ -1007,7 +1007,7 @@ MonoBehaviour:
             value: 0
           IntParameter:
             useVariable: 1
-            name: oldPuzzleId
+            name: puzzleId
             tooltip: 
             showInInspector: 0
             networkSync: 0
@@ -1096,7 +1096,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -1105,7 +1105,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -1122,7 +1122,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.puzzle_no
+          PropertyName: currentUserInfo.puzzle_no
           BoolParameter:
             useVariable: 0
             name: 
@@ -1228,7 +1228,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -1237,7 +1237,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -1254,7 +1254,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.hint_char_indexs
+          PropertyName: currentUserInfo.hint_char_indexs
           BoolParameter:
             useVariable: 0
             name: 
@@ -1360,7 +1360,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -1369,7 +1369,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -1667,16 +1667,18 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.GetProperty
         - HutongGames.PlayMaker.Actions.GetProperty
         - HutongGames.PlayMaker.Actions.GetProperty
+        - HutongGames.PlayMaker.Actions.GetProperty
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 0000000002000000040000000600000008000000
-        actionHashCodes: 5ac852045ac852045ac852045ac852045ac85204
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010000000000
+        actionStartIndex: 00000000020000000400000006000000080000000a000000
+        actionHashCodes: 5ac852045ac852045ac852045ac852045ac852045ac85204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1694,7 +1696,139 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.coin
+          PropertyName: 
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          EnumParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            enumName: HutongGames.PlayMaker.None
+            intValue: 0
+          ArrayParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: UnityEngine.Object
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+          setProperty: 0
+        - TargetObject:
+            useVariable: 1
+            name: fireBaseUserHelper
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: FireBaseUserHelper
+            value: {fileID: 0}
+          TargetTypeName: FireBaseUserHelper
+          PropertyName: currentUserInfo.coin
           BoolParameter:
             useVariable: 0
             name: 
@@ -1826,7 +1960,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.curent_mode
+          PropertyName: currentUserInfo.curent_mode
           BoolParameter:
             useVariable: 0
             name: 
@@ -1958,7 +2092,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.old_puzzle_id
+          PropertyName: currentUserInfo.old_puzzle_id
           BoolParameter:
             useVariable: 0
             name: 
@@ -2090,7 +2224,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.puzzle_no
+          PropertyName: currentUserInfo.puzzle_no
           BoolParameter:
             useVariable: 0
             name: 
@@ -2196,7 +2330,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: 
+            enumName: HutongGames.PlayMaker.None
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -2205,7 +2339,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: 
+            objectTypeName: UnityEngine.Object
             floatValues: []
             intValues: 
             boolValues: 
@@ -2222,7 +2356,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.hint_char_indexs
+          PropertyName: currentUserInfo.hint_char_indexs
           BoolParameter:
             useVariable: 0
             name: 
@@ -2360,12 +2494,12 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 0000000000
+        byteData: 000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 24000000010000002400000001000000240000000100000024000000010000002400000001000000
+        paramDataType: 240000000100000024000000010000002400000001000000240000000100000024000000010000002400000001000000
         paramName:
         - targetProperty
         - everyFrame
@@ -2377,8 +2511,10 @@ MonoBehaviour:
         - everyFrame
         - targetProperty
         - everyFrame
-        paramDataPos: 00000000000000000100000001000000020000000200000003000000030000000400000004000000
-        paramByteDataSize: 00000000010000000000000001000000000000000100000000000000010000000000000001000000
+        - targetProperty
+        - everyFrame
+        paramDataPos: 000000000000000001000000010000000200000002000000030000000300000004000000040000000500000005000000
+        paramByteDataSize: 000000000100000000000000010000000000000001000000000000000100000000000000010000000000000001000000
     - name: UPDATE_DATA_TO_FIRE_BASE
       description: 
       colorIndex: 0
@@ -2436,7 +2572,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.coin
+          PropertyName: currentUserInfo.coin
           BoolParameter:
             useVariable: 0
             name: 
@@ -2542,7 +2678,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -2551,7 +2687,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -2568,7 +2704,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.curent_mode
+          PropertyName: currentUserInfo.curent_mode
           BoolParameter:
             useVariable: 0
             name: 
@@ -2674,7 +2810,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -2683,7 +2819,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -2700,7 +2836,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.old_puzzle_id
+          PropertyName: currentUserInfo.old_puzzle_id
           BoolParameter:
             useVariable: 0
             name: 
@@ -2806,7 +2942,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -2815,7 +2951,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -2832,7 +2968,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.puzzle_no
+          PropertyName: currentUserInfo.puzzle_no
           BoolParameter:
             useVariable: 0
             name: 
@@ -2938,7 +3074,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -2947,7 +3083,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -2964,7 +3100,7 @@ MonoBehaviour:
             typeName: FireBaseUserHelper
             value: {fileID: 0}
           TargetTypeName: FireBaseUserHelper
-          PropertyName: userInfo.hint_char_indexs
+          PropertyName: currentUserInfo.hint_char_indexs
           BoolParameter:
             useVariable: 0
             name: 
@@ -3070,7 +3206,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            enumName: HutongGames.PlayMaker.None
+            enumName: 
             intValue: 0
           ArrayParameter:
             useVariable: 0
@@ -3079,7 +3215,7 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             type: -1
-            objectTypeName: UnityEngine.Object
+            objectTypeName: 
             floatValues: []
             intValues: 
             boolValues: 
@@ -3230,7 +3366,7 @@ MonoBehaviour:
     RestartOnEnable: 1
     EnableDebugFlow: 0
     EnableBreakpoints: 1
-    editorFlags: 1
+    editorFlags: 0
     activeStateName: 
     mouseEvents: 0
     handleLevelLoaded: 0

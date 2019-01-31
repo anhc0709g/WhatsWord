@@ -175,14 +175,14 @@ GameObject:
   - component: {fileID: 222663616865193204}
   - component: {fileID: 114472046828745514}
   - component: {fileID: 114510049310167614}
-  - component: {fileID: 114339629438767964}
+  - component: {fileID: 114914015311611568}
   m_Layer: 5
   m_Name: ShareCode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1267348793613632
 GameObject:
   m_ObjectHideFlags: 1
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 114327101604336956}
   - component: {fileID: 114920296945211952}
   - component: {fileID: 114766212043821506}
-  - component: {fileID: 114148178851656216}
+  - component: {fileID: 114388849857199750}
   m_Layer: 5
   m_Name: BClose
   m_TagString: Untagged
@@ -443,7 +443,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -455,20 +455,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Enter your friend's code to get more coin.
---- !u!114 &114148178851656216
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708972622245328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e95858e6f8c0844ad340be6bba1f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetFsms:
-  - {fileID: 114766212043821506}
-  button: {fileID: 114920296945211952}
 --- !u!114 &114224748146105716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -651,20 +637,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Enter code...
---- !u!114 &114339629438767964
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1261901836444352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e95858e6f8c0844ad340be6bba1f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetFsms:
-  - {fileID: 114510049310167614}
-  button: {fileID: 0}
 --- !u!114 &114347734236259990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -760,6 +732,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114388849857199750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1708972622245328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e95858e6f8c0844ad340be6bba1f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 114766212043821506}
+  button: {fileID: 114920296945211952}
 --- !u!114 &114428564181340542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1125,18 +1111,28 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.UiTextSetText
         - HutongGames.PlayMaker.Actions.UiInputFieldGetText
         - HutongGames.PlayMaker.Actions.ShareCodeCheck
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 599a9305babd9d05
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000400000007000000
+        actionHashCodes: 09fbab04599a9305babd9d05
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 1148125692593522}
         - ownerOption: 1
           gameObject:
             useVariable: 0
@@ -1152,6 +1148,12 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         - useVariable: 1
           name: txtCode
           tooltip: 
@@ -1176,7 +1178,13 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -1187,13 +1195,17 @@ MonoBehaviour:
         - code_already_added
         - code_not_found
         - 
-        byteData: 00
+        byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001200000001000000120000001700000012000000170000001700000017000000
+        paramDataType: 14000000120000001100000001000000140000001200000001000000120000001700000012000000170000001700000017000000
         paramName:
+        - gameObject
+        - text
+        - resetOnExit
+        - everyFrame
         - gameObject
         - text
         - everyFrame
@@ -1203,8 +1215,8 @@ MonoBehaviour:
         - onErrorAlreadyAdded
         - onErrorCodeNotFound
         - onError
-        paramDataPos: 000000000000000000000000010000000000000002000000010000000200000003000000
-        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000000000000000000000000000010000000100000001000000020000000000000003000000010000000200000003000000
+        paramByteDataSize: 00000000000000000000000001000000000000000000000001000000000000000000000000000000000000000000000000000000
     - name: CODE_SHARE_SUCC
       description: 
       colorIndex: 0
@@ -2508,7 +2520,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -2537,7 +2549,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 1
+    handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
@@ -2602,7 +2614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You've got 200 coin by enter code of your friend!
+  m_Text: You've got 200 coin by enter your friend's code!
 --- !u!114 &114766212043821506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2933,6 +2945,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114914015311611568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261901836444352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e95858e6f8c0844ad340be6bba1f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFsms:
+  - {fileID: 114510049310167614}
+  button: {fileID: 0}
 --- !u!114 &114920296945211952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2996,7 +3022,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 40
@@ -3319,8 +3345,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.999977, y: -57.900005}
-  m_SizeDelta: {x: 265.9, y: 57.6}
+  m_AnchoredPosition: {x: 0, y: -111}
+  m_SizeDelta: {x: 265.90002, y: 57.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224353422798512232
 RectTransform:
@@ -3335,9 +3361,9 @@ RectTransform:
   m_Father: {fileID: 224584557185336926}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 320, y: 70.44997}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 88}
   m_SizeDelta: {x: 640, y: 60.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224367281784236616
@@ -3508,7 +3534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.5, y: -32.799988}
+  m_AnchoredPosition: {x: -42, y: -44}
   m_SizeDelta: {x: 67.2, y: 64.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224804035029425522
@@ -3548,8 +3574,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 320, y: -160.84085}
-  m_SizeDelta: {x: 630, y: 47.3}
+  m_AnchoredPosition: {x: 322.5, y: -181}
+  m_SizeDelta: {x: 635, y: 47.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224834819124510158
 RectTransform:
@@ -3604,8 +3630,8 @@ RectTransform:
   m_Father: {fileID: 224584557185336926}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 302, y: 16.4}
-  m_SizeDelta: {x: 265.9, y: 47.6}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -6.4972725}
+  m_SizeDelta: {x: 265.90002, y: 47.6}
   m_Pivot: {x: 0.5, y: 0.5}

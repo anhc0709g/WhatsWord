@@ -10881,7 +10881,18 @@ MonoBehaviour:
     - name: UI CLICK
       isSystemEvent: 1
       isGlobal: 0
-    globalTransitions: []
+    - name: NewGame
+      isSystemEvent: 0
+      isGlobal: 1
+    globalTransitions:
+    - fsmEvent:
+        name: NewGame
+        isSystemEvent: 0
+        isGlobal: 1
+      toState: State 1
+      linkStyle: 0
+      linkConstraint: 0
+      colorIndex: 0
     variables:
       floatVariables:
       - useVariable: 1

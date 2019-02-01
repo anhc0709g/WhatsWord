@@ -1097,7 +1097,7 @@ MonoBehaviour:
         x: 562.0781
         y: 201.05469
         width: 169
-        height: 64
+        height: 80
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -1126,19 +1126,31 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: blank_code
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: WAIT_ENTER_SHARE_CODE
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.UiTextSetText
         - HutongGames.PlayMaker.Actions.UiInputFieldGetText
+        - HutongGames.PlayMaker.Actions.GetStringLength
+        - HutongGames.PlayMaker.Actions.IntCompare
         - HutongGames.PlayMaker.Actions.ShareCodeCheck
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000400000007000000
-        actionHashCodes: 09fbab04599a9305babd9d05
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0001010101
+        actionStartIndex: 0000000004000000070000000a00000010000000
+        actionHashCodes: 09fbab04599a930579de810009faa102babd9d05
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -1184,6 +1196,12 @@ MonoBehaviour:
           networkSync: 0
           value: 
         - useVariable: 1
+          name: txtCode
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 1
           name: error_String
           tooltip: 
           showInInspector: 0
@@ -1194,7 +1212,25 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: code_length
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: code_length
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -1208,16 +1244,19 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - blank_code
+        - blank_code
+        - 
         - share_code_success
         - code_already_added
         - code_not_found
         - 
-        byteData: 0000
+        byteData: 00000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000120000001100000001000000140000001200000001000000120000001700000012000000170000001700000017000000
+        paramDataType: 14000000120000001100000001000000140000001200000001000000120000001000000001000000100000001000000017000000170000001700000001000000120000001700000012000000170000001700000017000000
         paramName:
         - gameObject
         - text
@@ -1226,14 +1265,23 @@ MonoBehaviour:
         - gameObject
         - text
         - everyFrame
+        - stringVariable
+        - storeResult
+        - everyFrame
+        - integer1
+        - integer2
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
         - shareCode
         - onSuccess
         - errorString
         - onErrorAlreadyAdded
         - onErrorCodeNotFound
         - onError
-        paramDataPos: 00000000000000000000000000000000010000000100000001000000020000000000000003000000010000000200000003000000
-        paramByteDataSize: 00000000000000000000000001000000000000000000000001000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000000000000000000000000000010000000100000001000000020000000000000002000000010000000200000000000000010000000200000003000000030000000300000004000000040000000500000006000000
+        paramByteDataSize: 00000000000000000000000001000000000000000000000001000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000
     - name: CODE_SHARE_SUCC
       description: 
       colorIndex: 0
@@ -2616,8 +2664,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 979.6702
-        y: 286.2637
+        x: 979.6719
+        y: 286.26562
         width: 100
         height: 16
       isBreakpoint: 0
@@ -2673,6 +2721,9 @@ MonoBehaviour:
     - name: ENTERED_CODE
       isSystemEvent: 0
       isGlobal: 0
+    - name: blank_code
+      isSystemEvent: 0
+      isGlobal: 0
     - name: code_already_added
       isSystemEvent: 0
       isGlobal: 0
@@ -2694,6 +2745,12 @@ MonoBehaviour:
       intVariables:
       - useVariable: 1
         name: bonusCoin
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: code_length
         tooltip: 
         showInInspector: 0
         networkSync: 0
@@ -2749,7 +2806,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -2759,7 +2816,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -2788,7 +2845,7 @@ MonoBehaviour:
     handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
-    handleUiEvents: 0
+    handleUiEvents: 1
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0

@@ -1007,7 +1007,7 @@ MonoBehaviour:
             value: 0
           IntParameter:
             useVariable: 1
-            name: puzzleId
+            name: oldPuzzleId
             tooltip: 
             showInInspector: 0
             networkSync: 0
